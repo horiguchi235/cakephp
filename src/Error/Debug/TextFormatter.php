@@ -31,7 +31,7 @@ class TextFormatter implements FormatterInterface
     /**
      * {@inheritDoc}
      */
-    public function formatWrapper(string $contents, array $location = null)
+    public function formatWrapper(string $contents, array $location)
     {
         $template = <<<TEXT
 %s
@@ -44,6 +44,7 @@ TEXT;
         if (isset($location['file'], $location['file'])) {
             $lineInfo = sprintf('%s (line %s)', $location['file'], $location['line']);
         }
+
         return sprintf($template, $lineInfo, $contents);
     }
 

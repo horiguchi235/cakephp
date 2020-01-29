@@ -238,5 +238,4 @@ class ConsoleFormatter implements FormatterInterface
 
         return "\033[{$code}m{$text}\033[0m";
     }
-
 }
